@@ -3,7 +3,7 @@ var mysql = require("mysql");
 var connection;
 
 if (process.evn.JAWSBD_URL) {
-  connection = mysql.createConnection(PROCESS.INV.JAWSBD_URL);
+  connection = mysql.createConnection(process.env.JAWSBD_URL);
 } else {
   connection = mysql.createConnection({
     port: 3306,
@@ -25,3 +25,4 @@ connection.connect(function(err) {
 
 // Export connection for our ORM to use.
 module.exports = connection;
+
